@@ -156,9 +156,6 @@ class RichText extends AbstractShape implements ComparableInterface
      */
     private $lnSpcReduction;
 
-
-    private $bodyPr;
-
     /**
      * Create a new \PhpOffice\PhpPresentation\Shape\RichText instance
      */
@@ -706,25 +703,5 @@ class RichText extends AbstractShape implements ComparableInterface
         }
 
         return md5($hashElements . $this->wrap . $this->autoFit . $this->horizontalOverflow . $this->verticalOverflow . ($this->upright ? '1' : '0') . ($this->vertical ? '1' : '0') . $this->columns . $this->bottomInset . $this->leftInset . $this->rightInset . $this->topInset . parent::getHashCode() . __CLASS__);
-    }
-
-    public function setBodyPr(\DOMElement $element)
-    {
-        $this->bodyPr = $element;
-    }
-
-    public function getBodyPr()
-    {
-        return $this->bodyPr;
-    }
-
-    public function setListStyle(\DOMElement $element)
-    {
-        $this->listStyle = $element;
-    }
-
-    public function getListStyle()
-    {
-        return $this->listStyle;
     }
 }
