@@ -129,11 +129,9 @@ abstract class AbstractDecoratorWriter extends \PhpOffice\PhpPresentation\Writer
         $objWriter->writeAttribute('val', $color->getRGB());
 
         // a:alpha
-        if ($alpha != "100") {
-            $objWriter->startElement('a:alpha');
-            $objWriter->writeAttribute('val', $alpha . '%');
-            $objWriter->endElement();
-        }
+        $objWriter->startElement('a:alpha');
+        $objWriter->writeAttribute('val', $alpha . '%');
+        $objWriter->endElement();
 
         $objWriter->endElement();
     }
